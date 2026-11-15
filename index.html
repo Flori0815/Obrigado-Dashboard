@@ -3,11 +3,554 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Obrigado - Wartung & Status</title>
+<meta name="robots" content="noindex">
+<title>Obrigado - Wartung &amp; Status</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 920px; margin: 0 auto;
+         padding: 24px 16px 64px; line-height: 1.5; background: #fff; color: #111; }
+  @media (prefers-color-scheme: dark) { body { background: #0f1115; color: #e8e8e8; } }
+  h1 { margin-bottom: 4px; }
+  .subtitle { color: #666; margin-top: 0; }
+  .updated { font-size: 0.85em; color: #888; margin-bottom: 32px; }
+  section { margin-bottom: 40px; }
+  h2 { border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92em; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: #f3f3f3; }
+  @media (prefers-color-scheme: dark) { th { background: #1c1f26; } th, td { border-color: #333; } }
+  .issue { border: 1px solid #ddd; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; }
+  @media (prefers-color-scheme: dark) { .issue { border-color: #333; } }
+  .issue h3 { margin: 0 0 6px 0; }
+  .badge { display: inline-block; font-size: 0.75em; padding: 2px 8px; border-radius: 999px;
+            background: #eee; color: #333; margin-right: 6px; }
+  @media (prefers-color-scheme: dark) { .badge { background: #2a2d35; color: #ddd; } }
+  .badge.open { background: #fde68a; color: #713f12; }
+  .badge.closed { background: #bbf7d0; color: #14532d; }
+  a { color: #2563eb; }
+  nav a { margin-right: 16px; }
+  .empty { color: #888; font-style: italic; }
+</style>
 </head>
 <body>
 <h1>⛵ Obrigado</h1>
-<p>Dashboard wird erzeugt, sobald die GitHub Action im Repo
-<a href="https://github.com/Flori0815/obrigado">obrigado</a> einmal gelaufen ist.</p>
+<p class="subtitle">Wartungs- &amp; Reparaturstatus (automatisch generiert)</p>
+<p class="updated">Zuletzt aktualisiert: 15.11.2026 15:47 UTC</p>
+<nav>
+  <a href="#reparaturen">Offene Reparaturen</a>
+  <a href="#wartungsplan">Wartungsplan</a>
+  <a href="#wiki">Wiki</a>
+  <a href="#manuals">Handbücher</a>
+  <a href="#erledigt">Erledigt</a>
+</nav>
+
+<section id="reparaturen">
+<h2>Offene Reparaturen &amp; To-Dos</h2>
+<div class="issue">
+  <h3><span class="badge open">offen</span> <span class="badge">wartung</span><a href="https://github.com/Flori0815/Obrigado/issues/3">#3 Rettungsinsel anschaffen?</a></h3>
+  <p style="font-size:0.85em;color:#888">Angelegt am: 2026-11-15</p>
+  <p>Es ist keine Rettungsinsel an Bord (weder im Inserat erwähnt noch bei Besichtigung/Gutachten vorgefunden).</p>
+<p>Zu entscheiden: Anschaffung (neu oder gebraucht + Service), oder bewusst verzichten je nach geplantem Revier/Fahrtgebiet.</p>
+</div>
+<div class="issue">
+  <h3><span class="badge open">offen</span> <span class="badge">reparatur</span><a href="https://github.com/Flori0815/Obrigado/issues/2">#2 Heizung (Eberspächer D3LC) defekt - reparieren oder ersetzen</a></h3>
+  <p style="font-size:0.85em;color:#888">Angelegt am: 2026-11-15</p>
+  <p>Laut Funktionskontrolle vom 30.10.2026: Heizung ist defekt und wurde stillgelegt.</p>
+<p>Zu entscheiden: Reparatur (Fehlersuche/Ersatzteile) oder Komplettaustausch.</p>
+<p>Details: siehe <code>wiki/stammdaten.md</code>.</p>
+</div>
+<div class="issue">
+  <h3><span class="badge open">offen</span> <span class="badge">reparatur</span><a href="https://github.com/Flori0815/Obrigado/issues/1">#1 Kielnaht erneuern</a></h3>
+  <p style="font-size:0.85em;color:#888">Angelegt am: 2026-11-15</p>
+  <p>Laut Sachverständigengutachten (Jade Yachting, 29.09.2026): Lufteinschlüsse in der Kielnaht, darunter Rostverfärbung am Kielflansch sichtbar - Dichtheit fraglich.</p>
+<p><strong>Empfehlung:</strong> Alte Fuge entfernen, Kielflansch entrosten, Naht neu abdichten. Lässt sich durchführen, während das Boot an Land steht.</p>
+<p><strong>Kostenschätzung:</strong> ca. 800-1.000 € inkl. MwSt., zzgl. ggf. Krankosten.</p>
+<p><strong>Dringlichkeit:</strong> mittel.</p>
+<p>Details: siehe <code>wiki/gutachten-zusammenfassung.md</code>.</p>
+</div>
+</section>
+
+<section id="wartungsplan">
+<h2>Wartungsplan</h2>
+<h1>Wartungsplan</h1>
+<p>Wiederkehrende Arbeiten mit Intervall, letztem bekannten Zeitpunkt und
+Bestellnummern (soweit bekannt). Wenn eine Aufgabe ansteht, bitte ein
+<a href="../../issues">Issue</a> im Repo anlegen (Label <code>wartung</code> oder <code>reparatur</code>) -
+das Dashboard zeigt offene Issues automatisch an.</p>
+<table>
+<thead>
+<tr>
+<th>Bauteil</th>
+<th>Intervall</th>
+<th>Zuletzt erledigt</th>
+<th>Nächste Fälligkeit (grob)</th>
+<th>Teil / Bestellnummer</th>
+<th>Notizen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antifouling</td>
+<td>jährlich</td>
+<td>2026 (vor Übernahme)</td>
+<td>2027</td>
+<td><em>noch zu ergänzen</em></td>
+<td>Einige Abplatzungen laut Gutachten - beim nächsten Anstrich intensiverer Abtrag an diesen Stellen</td>
+</tr>
+<tr>
+<td>Zink-/Opferanoden</td>
+<td>jährlich</td>
+<td>laut Verkäufer jährlich</td>
+<td>2027</td>
+<td><em>noch zu ergänzen</em></td>
+<td>Bei Antifouling-Arbeiten mit erledigen</td>
+</tr>
+<tr>
+<td>Motoröl + Ölfilter</td>
+<td>jährlich</td>
+<td>laut Verkäufer jährlich</td>
+<td>2027</td>
+<td>Yanmar 3GM30F - <em>Filternummer noch zu ergänzen</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Getriebeöl</td>
+<td>jährlich</td>
+<td>laut Verkäufer jährlich</td>
+<td>2027</td>
+<td><em>noch zu ergänzen</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Kraftstofffilter (Vor-/Hauptfilter)</td>
+<td>jährlich</td>
+<td>laut Verkäufer regelmäßig</td>
+<td>-</td>
+<td><em>noch zu ergänzen</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Keilriemen</td>
+<td>jährlich</td>
+<td>laut Verkäufer regelmäßig</td>
+<td>-</td>
+<td><em>noch zu ergänzen</em></td>
+<td></td>
+</tr>
+<tr>
+<td>Impeller</td>
+<td>1-2 Jahre</td>
+<td>laut Verkäufer regelmäßig</td>
+<td>-</td>
+<td><em>noch zu ergänzen</em></td>
+<td>Ersatz-Impeller an Bord haben</td>
+</tr>
+<tr>
+<td>Borddurchlässe/Seeventile</td>
+<td>5-7 Jahre</td>
+<td>2017</td>
+<td>ca. 2023-2024 fällig gewesen - prüfen!</td>
+<td>-</td>
+<td>Letzter bekannter Austausch 2017, Intervall könnte bereits überschritten sein</td>
+</tr>
+<tr>
+<td>Gasanlagen-Prüfung (DVGW G 608)</td>
+<td>2 Jahre</td>
+<td>laut Verkäufer "regelmäßig geprüft"</td>
+<td>-</td>
+<td>-</td>
+<td>Genaues Datum/Plakette noch zu dokumentieren</td>
+</tr>
+<tr>
+<td>Feuerlöscher</td>
+<td>2 Jahre</td>
+<td>unbekannt</td>
+<td>-</td>
+<td>-</td>
+<td>Status noch zu klären</td>
+</tr>
+<tr>
+<td>Rettungsinsel-Service</td>
+<td>3 Jahre</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td><strong>Keine Rettungsinsel vorhanden</strong> - Anschaffung entscheiden, siehe Issue</td>
+</tr>
+<tr>
+<td>Stehendes Gut (Rigg)</td>
+<td>10-15 Jahre</td>
+<td>2020 erneuert</td>
+<td>ca. 2030-2035</td>
+<td>-</td>
+<td>Jüngstes Rigg, aktuell unkritisch</td>
+</tr>
+<tr>
+<td>Laufendes Gut &amp; Segel</td>
+<td>8-12 Jahre</td>
+<td>s. Erneuerungshistorie</td>
+<td>laufend prüfen</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>Batterien</td>
+<td>5-7 Jahre</td>
+<td>Starterbatterie 2017, Bugstrahlbatterie 2018</td>
+<td>ca. 2024-2025 fällig gewesen - Kapazität prüfen</td>
+<td>-</td>
+<td>Noch keine LiFePO4, Kapazität nicht gemessen</td>
+</tr>
+<tr>
+<td>Toilettenschlauch</td>
+<td>8-10 Jahre</td>
+<td>unbekannt</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>Kielnaht</td>
+<td>einmalig (akut)</td>
+<td><strong>noch nicht erledigt</strong></td>
+<td>so bald wie möglich</td>
+<td>-</td>
+<td>Empfehlung aus Gutachten 29.09.2026, ca. 800-1.000 € + ggf. Kranen - siehe Issue</td>
+</tr>
+<tr>
+<td>Heizung (Eberspächer D3LC)</td>
+<td>einmalig (akut)</td>
+<td><strong>defekt seit mind. 30.10.2026</strong></td>
+<td>-</td>
+<td>-</td>
+<td>Reparatur oder Ersatz entscheiden - siehe Issue</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hinweis:</strong> Alle "noch zu ergänzen"-Felder bitte bei Gelegenheit mit echten
+Bestellnummern/Teilenummern aus Rechnungen oder dem Yanmar-Handbuch befüllen.</p>
+</section>
+
+<section id="wiki">
+<h2>Wiki</h2>
+<h1>Erneuerungshistorie (vor Übernahme durch Florian)</h1>
+<p>Chronologische Übersicht aller bekannten Erneuerungen, laut Verkäuferangaben
+(Inserat/Besichtigung) bzw. Sachverständigengutachten vom 29.09.2026.</p>
+<table>
+<thead>
+<tr>
+<th>Jahr</th>
+<th>Was</th>
+<th>Quelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td>Borddurchlässe/Seeventile erneuert</td>
+<td>Inserat/Besichtigung</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>Starterbatterie neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Bugstrahlbatterie neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>FI-Absicherung neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Rollreffgenua neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2018-2024</td>
+<td>Elektronik-Paket erneuert (Funkgerät, AIS, Kartenplotter Axiom, Tridata-Geber, Yachtrouter)</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>Winterplane Vorschiff neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2019 <em>(lt. Gutachten)</em> / 2020 <em>(lt. Inserat)</em></td>
+<td>Ruder(-blatt) erneuert - Diskrepanz zwischen Quellen, nicht aufgelöst</td>
+<td>Gutachten vs. Inserat</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>Cockpit-Schaden repariert (Details in Kaufhistorie, nicht öffentlich)</td>
+<td>ADAC-Kaufvertrag</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Stehendes Gut (Rigg) komplett erneuert</td>
+<td>Inserat/Besichtigung</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Facnor-FD-Rollreffanlage neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Sprayhood neu</td>
+<td>Inserat/Besichtigung</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Bordelektrik/Solar-System überarbeitet</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Code-0-Segel mit Facnor-FX-Furler neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Bugbaum neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Lattengroßsegel „Batmain" neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Landstromkabel neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Dirk neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Wassergeschmierte Wellenabdichtung neu</td>
+<td>Inserat/Besichtigung</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Bilgepumpe neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Landstromzähler neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>LED-Dreifarbenlaterne mit Ankerlicht neu</td>
+<td>Inserat</td>
+</tr>
+<tr>
+<td>2026 (vor Übernahme)</td>
+<td>Antifouling frisch gestrichen (einige Abplatzungen)</td>
+<td>Besichtigung/Gutachten</td>
+</tr>
+</tbody>
+</table>
+<p>Motor bei Übernahme: ca. 1.472 Betriebsstunden (Yanmar 3GM30F).</p><hr><h1>Gutachten Unterwasserschiff — Zusammenfassung</h1>
+<p>Sachverständigengutachten von Jade Yachting (Tobias Schadewaldt,
+BNSV-zertifiziert), Ortstermin 24.09.2026, Gutachten vom 29.09.2026.
+Volltext liegt in der (nicht-öffentlichen) Kaufhistorie.</p>
+<p><strong>Gegenstand:</strong> ausschließlich das Unterwasserschiff an Land (inkl. Kielbolzen
+von innen). Innenbereich, Rigg, Antrieb und Bordsysteme waren ausdrücklich
+nicht Teil der Begutachtung.</p>
+<p><strong>Gesamtergebnis:</strong> Keine schwerwiegenden Mängel oder Schäden. Keine Hinweise
+auf Osmose-, Struktur- oder Kollisionsschäden.</p>
+<h2>Befunde im Detail</h2>
+<ul>
+<li><strong>Osmose/Feuchtigkeit:</strong> Messung (Greisinger GMK 210) an 3 Stellen im
+  Unterwasserschiff: 1,1 / 1,1 / unauffällig. Referenz oberhalb Wasserlinie:
+  1,4 / 1,5 — keine erhöhte Feuchtigkeit. Keine GFK-Schäden, keine Haarrisse.</li>
+<li><strong>Kielnaht:</strong> Lufteinschlüsse, darunter Rostverfärbung (Kielflansch) —
+  Dichtheit fraglich. <strong>Empfehlung: Erneuerung</strong>, ca. 800-1.000 € inkl. MwSt.
+  zzgl. ggf. Kranen. Dringlichkeit: mittel. → siehe offenes Issue.</li>
+<li><strong>Korrosion am Kiel:</strong> sichtbare Roststellen, kleine vermutlich
+  korrosionsbedingte Dellen, keine strukturellen Schäden. Volles Ausmaß wegen
+  frischer Antifouling-Schicht nicht erkennbar. Im Zuge der Kielnaht-Arbeiten
+  oder beim nächsten Antifouling mit beurteilen.</li>
+<li><strong>Antifouling:</strong> neuer Anstrich, einige Abplatzungen (zu große
+  Schichtstärke) — kein schwerer Mangel, beim nächsten Anstrich intensiverer
+  Abtrag an diesen Stellen nötig.</li>
+<li><strong>Kielbolzen</strong> (von innen geprüft): keine Anzeichen von Rost oder Wasser.</li>
+<li><strong>Ruderlager/Wellenlager:</strong> intakt. <strong>Propeller:</strong> keine Schäden sichtbar.</li>
+<li><strong>Anoden:</strong> leicht abgenutzt, insgesamt guter Zustand.</li>
+<li><strong>Bugstrahlruder:</strong> guter Zustand.</li>
+<li><strong>Lagerung:</strong> ordnungsgemäß auf Lagerbock mit Zusatzstützen, keine Dellen an
+  den Pallstellen.</li>
+</ul>
+<p><strong>Anmerkung des Gutachters:</strong> Da frisch antifoulingt, waren Schäden unter dem
+Anstrich (insbesondere Kielkorrosion) nur eingeschränkt beurteilbar. Innenraum
+wirkte oberflächlich überdurchschnittlich gut erhalten (nicht vertieft
+geprüft).</p><hr><h1>Stammdaten</h1>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schiffsname</td>
+<td>Obrigado</td>
+</tr>
+<tr>
+<td>Typ</td>
+<td>Dehler 37.5 Cr</td>
+</tr>
+<tr>
+<td>Baujahr</td>
+<td>1997</td>
+</tr>
+<tr>
+<td>Länge ü.A.</td>
+<td>11,20 m</td>
+</tr>
+<tr>
+<td>Breite ü.A.</td>
+<td>3,50 m</td>
+</tr>
+<tr>
+<td>Tiefgang</td>
+<td>1,5 m (Flügelkiel)</td>
+</tr>
+<tr>
+<td>Ballast</td>
+<td>2.400 kg</td>
+</tr>
+<tr>
+<td>Wasserverdrängung</td>
+<td>5.600 kg</td>
+</tr>
+<tr>
+<td>MMSI</td>
+<td>211181840</td>
+</tr>
+<tr>
+<td>Rufzeichen (Call Sign)</td>
+<td>DD9672</td>
+</tr>
+<tr>
+<td>IMO</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Baunummer</td>
+<td>630-041</td>
+</tr>
+<tr>
+<td>Motor</td>
+<td>Yanmar 3GM30F, 27 PS</td>
+</tr>
+<tr>
+<td>Motornummer</td>
+<td>19387</td>
+</tr>
+<tr>
+<td>Antrieb</td>
+<td>Wellenantrieb (kein Saildrive)</td>
+</tr>
+<tr>
+<td>Dieseltank</td>
+<td>ca. 88 l (zwei Inspektionsdeckel)</td>
+</tr>
+<tr>
+<td>Wassertank</td>
+<td>ca. 205 l</td>
+</tr>
+<tr>
+<td>Fäkalientank</td>
+<td>ca. 40 l, elektrische WC-Absaugung (Serienausstattung)</td>
+</tr>
+<tr>
+<td>Warmwasserboiler</td>
+<td>30 l (über Landstrom)</td>
+</tr>
+<tr>
+<td>Kabinen</td>
+<td>3 Kabinen, 5 Kojen</td>
+</tr>
+<tr>
+<td>Stehhöhe Salon</td>
+<td>ca. 1,9 m</td>
+</tr>
+<tr>
+<td>Liegeplatz (Stand Übernahme)</td>
+<td>Hooksiel, WSV-Gelände</td>
+</tr>
+</tbody>
+</table>
+<h2>Weitere Ausstattung</h2>
+<ul>
+<li>Außendusche an Badeplattform (Attwood)</li>
+<li>Kühlschrank (Coolmatic)</li>
+<li>Heizung Eberspächer D3LC — <strong>Stand 30.10.2026: defekt, stillgelegt</strong></li>
+<li>3-Flammen-Gasherd mit Backofen</li>
+<li>Bugstrahlruder (Vetus)</li>
+<li>Elektrische Ankerwinde</li>
+<li>2 elektrisch betriebene Winschen</li>
+<li>Solaranlage (Victron Argofet, Solarpanel, MPP-Regler, Batteriemonitor)</li>
+<li>Navigation/Elektronik: Handfunkgerät Cobra Marine, Funkgerät Raymarine, AIS,
+  Kartenplotter Axiom, Tridata-Geber, Yachtrouter</li>
+<li>Batterien: Starterbatterie, Bugstrahlbatterie — Stand Übernahme noch keine
+  LiFePO4-Zellen, Kapazität nicht gemessen</li>
+</ul>
+<h2>Segel &amp; Rigg</h2>
+<ul>
+<li>Segelgarnitur: Rollreffgenua, Großsegel, Code 0</li>
+<li>Rollreffgenua 26,1 m² (2018)</li>
+<li>Facnor FD Rollreffanlage (2020)</li>
+<li>UK Code Zero 72 m² (2023) mit Facnor-FX-Furler</li>
+<li>Bugbaum (2023)</li>
+<li>UK Lattengroßsegel „Batmain" 39,5 m², 2 Reff (2025)</li>
+<li>Stehendes Gut komplett erneuert (2020)</li>
+<li>Dirk (2026)</li>
+</ul>
+<h2>Persenning</h2>
+<ul>
+<li>Winterplane Vorschiff (2019) + Tragegerüst</li>
+<li>Sprayhood (2020)</li>
+<li>Heckzelt / Vorsegelpersenning „Kuchenbude" (Fenster erneuert)</li>
+</ul>
+</section>
+
+<section id="manuals">
+<h2>Handbücher</h2>
+<h1>Handbücher &amp; Anleitungen</h1>
+<p>Hier PDFs/Scans von Handbüchern ablegen. Noch zu besorgen/hochladen:</p>
+<ul>
+<li>[ ] Yanmar 3GM30F - Betriebsanleitung</li>
+<li>[ ] Eberspächer D3LC - Handbuch (Heizung, aktuell defekt)</li>
+<li>[ ] Raymarine Axiom Kartenplotter - Handbuch</li>
+<li>[ ] Raymarine AIS - Handbuch</li>
+<li>[ ] Facnor FD Rollreffanlage - Handbuch</li>
+<li>[ ] Facnor FX Furler (Code 0) - Handbuch</li>
+<li>[ ] Victron Argofet / MPP-Regler / Batteriemonitor - Handbücher</li>
+<li>[ ] Coolmatic Kühlschrank - Handbuch</li>
+<li>[ ] Vetus Bugstrahlruder - Handbuch</li>
+<li>[ ] Allgemeines Boots-Handbuch (Eignerhandbuch Dehler 37.5 Cr), falls vorhanden</li>
+</ul>
+</section>
+
+<section id="erledigt">
+<h2>Zuletzt erledigt</h2>
+<p class="empty">Noch nichts abgeschlossen.</p>
+</section>
+
 </body>
 </html>
