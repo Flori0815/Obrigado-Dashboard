@@ -35,7 +35,7 @@
 <body>
 <h1>⛵ Obrigado</h1>
 <p class="subtitle">Wartungs- &amp; Reparaturstatus (automatisch generiert)</p>
-<p class="updated">Zuletzt aktualisiert: 15.11.2026 16:20 UTC</p>
+<p class="updated">Zuletzt aktualisiert: 15.11.2026 16:37 UTC</p>
 <nav>
   <a href="#reparaturen">Offene Reparaturen</a>
   <a href="#wartungsplan">Wartungsplan</a>
@@ -1387,6 +1387,21 @@ mit Alternativ-Artikelnummern: <a href="teile.md"><code>teile.md</code></a>.</p>
 </table>
 <p><strong>Hinweis:</strong> Alle "noch zu ergänzen"-Felder bitte bei Gelegenheit mit echten
 Bestellnummern/Teilenummern aus Rechnungen oder dem Yanmar-Handbuch befüllen.</p>
+<h2>Label-Schema für Issues</h2>
+<ul>
+<li><code>historie</code> — vergangene, bereits erledigte (oder in der Saison bewusst nicht
+  erledigte, dann zusätzlich <code>nicht-erledigt-historisch</code>) wiederkehrende Arbeit</li>
+<li><code>saison-17-18</code> … <code>saison-26-27</code> — die Saison, in der die Arbeit anfiel</li>
+<li><code>aufgabe-&lt;name&gt;</code> — ein Label pro wiederkehrender Tätigkeit (z. B.
+  <code>aufgabe-gasflaschen-ausbauen-und-einlagern</code>), damit sich über die Jahre
+  hinweg alle Vorkommen derselben Aufgabe per Label-Filter anzeigen lassen</li>
+<li><code>reparatur</code> / <code>wartung</code> — aktuell anstehende, noch zu erledigende Punkte
+  (keine Saison/Aufgaben-Label, da (noch) kein wiederkehrender Eintrag)</li>
+</ul>
+<p>Im GitHub-Issues-Tab lässt sich so z. B. nach <code>saison-25-26</code> UND
+<code>aufgabe-antifouling-instand-setzen-erneuern</code> gleichzeitig filtern, um genau
+diese eine Ausführung zu finden, oder nur nach der Aufgabe, um die komplette
+Historie über alle Jahre zu sehen.</p>
 </section>
 
 <section id="wiki">
